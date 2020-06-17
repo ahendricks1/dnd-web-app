@@ -1,8 +1,7 @@
 # DnD Web Application
 ## Josh Kelley and Austin Hendricks
 
-### DnD Webapp allowing users to register, group up, start a campaign, track campaign, etc…
-### This is basically roll20 but better
+### DnD Webapp allowing users to register, group up, start a campaign, track campaign, etc… This is basically roll20 but better
 
 List of features
 - Dashboard page / homepage with nav bar
