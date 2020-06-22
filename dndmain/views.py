@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Party
 
@@ -11,8 +11,9 @@ def index(request):
 	context = { 'parties': parties }
 	return render(request, 'dndmain/index.html', context)
 
-def detail(request, character_id):
-	return HttpResponse("You're looking at character %s." % character_id)
+def detail(request, party_id):
+	party = get_object_or_404(Party, pk = party_id)
+	return render(request, 'dndmain/detail.html', {'party': party})
 
 def party(request, party_id):
 	party = "You're looking at party #%s."
