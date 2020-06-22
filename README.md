@@ -24,9 +24,9 @@ List of features
 Navigation - Home Page
 - User logs in using credentials
 - User can:
-	Create new character
-	Select existing character
-	Select 'DM' role
+	1. Create new character
+	2. Select existing character
+	3. Select 'DM' role
 - If user is in the DM role, they can create a group, otherwise they can join one
 
 Navigation - Party Page
