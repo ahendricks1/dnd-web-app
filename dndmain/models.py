@@ -14,6 +14,17 @@ class Character(models.Model):
 	party = models.ForeignKey(Party, on_delete = models.CASCADE)
 	real_name = models.CharField(max_length = 100)
 	char_name = models.CharField(max_length = 100)
+	health = models.IntegerField(default = 0)
+	current_hp = models.IntegerField(default = 0)
+	armor_class = models.IntegerField(default = 0)
+	speed = models.IntegerField(default = 0)
+	init = models.IntegerField(default = 0)
+	strength = models.IntegerField(default = 10)
+	dex = models.IntegerField(default = 0)
+	constitution = models.IntegerField(default = 0)
+	intelligence = models.IntegerField(default = 0)
+	wisdom = models.IntegerField(default = 0)
+	charisma = models.IntegerField(default = 0)
 
 	def __str__(self):
 		return self.char_name
