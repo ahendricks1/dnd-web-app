@@ -20,3 +20,19 @@ List of features
 - Set dice and roll to particular skill (scales with level/advantage/disadvantage)
 - Damage/healing (auto update character sheet)
 - Spotify playlist api? (In/out of combat/depending on situation)
+
+Navigation - Home Page
+- User logs in using credentials
+- User can:
+	Create new character
+	Select existing character
+	Select 'DM' role
+- If user is in the DM role, they can create a group, otherwise they can join one
+
+Navigation - Party Page
+- User has access to character sheet they've just created or selected previously
+- Minor character stats shown on this page, such as current HP, base stats, and spell slots remaining
+
+Navigation - Character Detail Page
+- Update character stats/spells/spell slots/items on this page for referencing
+- Any changes made on this page are applied to the party page so other users may see updates
