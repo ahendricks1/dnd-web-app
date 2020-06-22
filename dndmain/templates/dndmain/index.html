@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'dndmain/style.css' %}">
+
+{% if parties %}
+    <ul>
+    {% for party in parties %}
+        <li><a href="/dndmain/{{ party.id }}">{{ party.dungeon_master }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You don't have a DM!</p>
+{% endif %}

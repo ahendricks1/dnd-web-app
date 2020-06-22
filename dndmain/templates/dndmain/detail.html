@@ -1,0 +1,18 @@
+<h1>{{ party.dungeon_master }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'dndmain:character' party.id %}" method="post">
+{% csrf_token %}
+{% for character in party.character_set.all %}
+	<input type="radio" name="character" id="character{{ forloop.counter }}" value="{{ character.id }}">
+		<label for="character{{ forloop.counter }}">{{ character.char_name }}</label><br>
+{% endfor %}
+
+<input type="submit" name="Character">
+
+<ul>
+{% for character in party.character_set.all %}
+    <li><a href="/dndmain/character/{{ character.id }}">{{ character.char_name }}</li>
+{% endfor %}
+</ul>
