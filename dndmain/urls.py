@@ -4,8 +4,8 @@ from . import views
 
 app_name = 'dndmain'
 urlpatterns = [
-	path('', views.index, name = 'index'),
-	path('<int:party_id>/', views.detail, name = 'detail'),
-	path('<int:party_id>/party/', views.party, name = 'party'),
-	path('character/<int:character_id>/', views.character, name = 'character')
+	path('', views.IndexView.as_view(), name = 'index'),
+	path('<int:pk>/', views.DetailView.as_view(), name = 'detail'),
+	path('<int:pk>/party/', views.PartyView.as_view(), name = 'party'),
+	path('character/<int:pk>/', views.CharacterView.as_view(), name = 'character')
 ]
