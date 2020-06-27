@@ -1,0 +1,14 @@
+
+{% block title %}
+Create Account
+{% endblock %}
+
+{% block content %}
+  <legend class="border-bottom">User Registration</legend>
+  <form class="form-group" method="post" action=" {% url 'register' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-success">Register</button>
+
+  </form>
+{% endblock %}
