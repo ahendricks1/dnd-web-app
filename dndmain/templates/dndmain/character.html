@@ -1,3 +1,7 @@
+{% extends 'dndmain/base.html' %}
+
+{% block content %}
+
 <h2>{{ character.char_name }}</h2>
 
 <p>
@@ -18,4 +22,4 @@
 	Charisma:{{ character.charisma }}
 </p>
 
-<a href="{% url 'dndmain:campaign' %}">Campaign</a>
+{% endblock %}

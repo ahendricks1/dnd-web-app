@@ -1,8 +1,12 @@
+{% extends 'dndmain/base.html' %}
+
+{% block content %}
+
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'dndmain/style.css' %}">
 
-<h1>Welcome to our DnD Web Application!</h1>
+<h1> Welcome to our DnD Web Application!</h1>
 
 {% if parties %}
 	Current parties (by DM):
@@ -15,3 +19,5 @@
 {% else %}
     <p>You don't have a DM!</p>
 {% endif %}
+
+{% endblock %}
