@@ -1,0 +1,14 @@
+{% extends 'dndmain/base.html' %}
+
+{% block content %}
+
+{% if characters %}
+	<h2>Current characters in your campaign:</h2>
+	{% for character in characters %}
+		<li><a href="{% url 'dndmain:character' character.id %}">{{ character.char_name }}</a></li>
+	{% endfor %}
+{% endif %}
+
+<br>
+
+{% endblock %}
