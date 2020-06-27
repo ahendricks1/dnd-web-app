@@ -2,10 +2,14 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'dndmain/style.css' %}">
 
+<h1>Welcome to our DnD Web Application!</h1>
+
 {% if parties %}
+	Current parties (by DM):
+	<br>
     <ul>
     {% for party in parties %}
-        <li><a href="/dndmain/{{ party.id }}">{{ party.dungeon_master }}</a></li>
+        <li><a href="/campaign/">{{ party.dungeon_master }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

@@ -1,3 +1,21 @@
-<h1>{{ character.char_name }}</h1>
+<h2>{{ character.char_name }}</h2>
 
-<p>Your name is {{ character.real_name }}, your str is {{ character.strength }} and this is a test!</p>
+<p>
+	Health:{{ character.health }}
+	<br>
+	AC:{{ character.armor_class }}
+	<br>
+	Strength:{{ character.strength }}
+	<br>
+	Dexterity:{{ character.dex }}
+	<br>
+	Constitution:{{ character.constitution }}
+	<br>
+	Intelligence:{{ character.intelligence }}
+	<br>
+	Wisdom:{{ character.wisdom }}
+	<br>	
+	Charisma:{{ character.charisma }}
+</p>
+
+<a href="{% url 'dndmain:campaign' %}">Campaign</a>
