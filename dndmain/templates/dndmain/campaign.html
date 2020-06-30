@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'dndmain/style.css' %}">
+
 {% if characters %}
 	<h2>Current characters in your campaign:</h2>
 	{% for character in characters %}

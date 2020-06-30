@@ -1,3 +1,35 @@
 li a {
 	color: black;
 }
+
+nav {
+	display: flex;
+	background-color: #ebd8c7;
+	align-items: center;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+	display: flex;
+	text-transform: uppercase;
+	font-size: 25px;
+	letter-spacing: 1px;
+	list-style-type: none;
+}
+
+.logo a{
+	padding-left: 5px;
+	text-decoration: none;
+}
+
+.nav-links li{
+	float: left;
+	list-style-type: none;
+}
+
+.nav-links li a{
+	padding: 6px 12px;
+	font-size: 20px;
+	text-decoration: none;
+}

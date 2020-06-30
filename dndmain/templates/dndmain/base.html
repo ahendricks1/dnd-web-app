@@ -1,38 +1,29 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <style>
-
-    .topnav {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #dddddd;
-      display: block;
-    }
-
-    .topnav li {
-      float: left;
-    }
-
-    .topnav li a {
-      display: block;
-      padding: 8px;
-      text-decoration: none;
-    }
-
-    .topnav li a:hover {
-      background-color: grey;
-    }
-
+    body { margin: 0; }
   </style>
-</head>
+  <title>Nat1: A DnD Webapp Project</title>
+  <link rel="stylesheet" type="text/css" href="dndmain/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> </head>
 <body>
-  <ul class="topnav">
-    <li><a href="{% url 'dndmain:home' %}">Home</a></li>
-    <li><a href="{% url 'dndmain:campaign' %}">Campaign</a></li>
-  </ul>
+  <nav>
+    <li>
+      <img src="{% static 'dndmain/images/dnd.png' %}" style="width: 40px; height: 40px;">
+    </li>
+    <div class="logo">
+      <li>
+        <a href="{% url 'dndmain:home' %}">Nat1</a>
+      </li>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'dndmain:campaign' %}">Campaign</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
 
