@@ -5,6 +5,7 @@ li a {
 nav {
 	display: flex;
 	background-color: #ebd8c7;
+	background-image: linear-gradient(to bottom right, #ebd8c7, #f2bb8a);
 	align-items: center;
 	text-decoration: none;
 	font-family: 'Roboto', sans-serif;
