@@ -37,10 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'register.apps.RegisterConfig',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
 
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,7 +79,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dndwebapp.wsgi.application'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
+#LOGIN_REDIRECT_URL = "/accounts/profile/<int:pk>"
+
+ACCOUNT_SIGNUP_FORM_CLASS = 'register.forms.RegisterForm'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
