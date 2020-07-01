@@ -1,0 +1,12 @@
+{% extends 'dndmain/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'dndmain/style.css' %}">
+
+<h1> Temp Profile!</h1>
+{{ user.username }}
+
+{% endblock %}
