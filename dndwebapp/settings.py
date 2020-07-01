@@ -86,7 +86,8 @@ AUTHENTICATION_BACKENDS = [
 
 #LOGIN_REDIRECT_URL = "/accounts/profile/<int:pk>"
 
-ACCOUNT_SIGNUP_FORM_CLASS = 'register.forms.RegisterForm'
+#might use this later to make a customer sign up form
+#ACCOUNT_SIGNUP_FORM_CLASS = 'register.forms.RegisterForm'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -135,3 +136,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
