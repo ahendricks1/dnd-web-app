@@ -9,8 +9,6 @@
       color: #f1f1f1;
 
     }
-
-
   </style>
   <title>Nat1: A DnD Webapp Project</title>
   <link rel="stylesheet" type="text/css" href="dndmain/style.css">
@@ -28,6 +26,7 @@
     <ul class="nav-links">
       <li><a href="{% url 'dndmain:campaign' %}">Campaign</a></li>
       {% if user.is_authenticated %}
+      <li><a href="{% url 'dndmain:profile' user.pk %}">Profile</a></li>
       <li><a href="/accounts/logout">Sign out</a></li>
       {% else %}
       <li><a href="/accounts/login">Sign in</a></li>

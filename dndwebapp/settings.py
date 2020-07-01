@@ -138,3 +138,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+LOGIN_REDIRECT_URL = 'dndmain:home'

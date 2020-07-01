@@ -25,6 +25,6 @@ def party(request, party_id):
 	return HttpResponse(party % party_id)
 
 @login_required
-def profile(request):
-
-	return render(request, "dndmain/profile.html")
+def profile(request, user_id):
+	user = get_object_or_404(User, pk = user_id)
+	return render(request, "dndmain/profile.html", {'user': user})

@@ -9,5 +9,5 @@ urlpatterns = [
 	path('campaign/', views.campaign, name = 'campaign'),
 	path('party/<int:pk>/', views.party, name = 'party'),
 	path('character/<int:character_id>/', views.character, name = 'character'),
-	path('accounts/profile/', views.profile, name = 'profile')
+	path('profile/<int:user_id>/', views.profile, name = 'profile')
 ]
