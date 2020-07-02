@@ -12,7 +12,7 @@ class Party(models.Model):
 		return self.creation_date >= timezone.now() - datetime.timedelta(days = 1)
 
 class Character(models.Model):
-	user = models.ForeignKey(User, on_delete = models.CASCADE)
+	user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'User', null = True)
 	party = models.ForeignKey(Party, on_delete = models.CASCADE)
 	real_name = models.CharField(max_length = 100)
 	char_name = models.CharField(max_length = 100)

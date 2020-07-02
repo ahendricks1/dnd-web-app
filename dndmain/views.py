@@ -27,4 +27,5 @@ def party(request, party_id):
 @login_required
 def profile(request, user_id):
 	user = get_object_or_404(User, pk = user_id)
-	return render(request, "dndmain/profile.html", {'user': user})
+	characters = Character.objects.all().filter(user = user)
+	return render(request, "dndmain/profile.html", {'characters': characters})
