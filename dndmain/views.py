@@ -39,8 +39,8 @@ def create(request):
 		form = CharacterForm(request.POST or None)
 		if(form.is_valid()):
 			user = form.save()
-			context = {
-				'form': form
-			}
+		context = {
+			'form': form
+		}
 
 		return render(request, 'dndmain/create.html', context)
