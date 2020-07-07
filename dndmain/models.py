@@ -13,7 +13,7 @@ class Party(models.Model):
 
 class Character(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'User', null = True)
-	party = models.ForeignKey(Party, on_delete = models.CASCADE)
+	party = models.ForeignKey(Party, on_delete = models.CASCADE, default = True)
 	real_name = models.CharField(max_length = 100)
 	char_name = models.CharField(max_length = 100)
 	health = models.IntegerField(default = 0)

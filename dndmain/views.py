@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from .models import Party, Character
+from .forms import CharacterForm
 
 def home(request):
 	parties = Party.objects.order_by('-creation_date')[:5]
@@ -28,4 +29,18 @@ def party(request, party_id):
 def profile(request, user_id):
 	user = get_object_or_404(User, pk = user_id)
 	characters = Character.objects.all().filter(user = user)
-	return render(request, "dndmain/profile.html", {'characters': characters})
+	return render(request, 'dndmain/profile.html', {'characters': characters})
+
+def create(request):
+	if not request.user.is_authenticated:
+		return render(request, 'dndmain/home.html')
+
+	else:
+		form = CharacterForm(request.POST or None)
+		if(form.is_valid()):
+			user = form.save()
+			context = {
+				'form': form
+			}
+
+		return render(request, 'dndmain/create.html', context)
