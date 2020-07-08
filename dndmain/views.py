@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
@@ -31,14 +31,34 @@ def profile(request, user_id):
 	characters = Character.objects.all().filter(user = user)
 	return render(request, 'dndmain/profile.html', {'characters': characters})
 
-def create(request):
+@login_required
+def edit_character(request, character_id):
+	character = get_object_or_404(Character, pk = character_id)
+	if request.method == 'POST':
+		form = CharacterForm(request.POST, instance = character)
+		if form.is_valid():
+			form.save()
+			return render(request, 'dndmain/home.html')
+
+	else:
+		form = CharacterForm(instance = character)
+		args = {'form': form}
+
+		return render(request, 'dndmain/edit_character.html', args)
+
+
+def create(request, user_id):
 	if not request.user.is_authenticated:
 		return render(request, 'dndmain/home.html')
 
 	else:
 		form = CharacterForm(request.POST or None)
 		if(form.is_valid()):
-			user = form.save()
+			form = form.save()
+			curr_user = get_object_or_404(User, pk = user_id)
+			form.user = curr_user
+			form.save()
+			return render(request, 'dndmain/home.html')
 		context = {
 			'form': form
 		}

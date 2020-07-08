@@ -8,6 +8,8 @@
 
 <h2>{{ character.char_name }}</h2>
 
+<a href="{% url 'dndmain:edit_character' character.id %}">Edit Character</a>
+
 <p>
 	Health:{{ character.health }}
 	<br>
