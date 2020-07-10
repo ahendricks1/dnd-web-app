@@ -49,10 +49,10 @@ def edit_character(request, character_id):
 
 @login_required
 def create(request, user_id):
-	#if not request.user.is_authenticated:
-	#	return render(request, 'dndmain/home.html')
-#
-	#else:
+	if not request.user.is_authenticated:
+		return render(request, 'dndmain/home.html')
+
+	else:
 		form = CharacterForm(request.POST or None)
 		if(form.is_valid()):
 			form = form.save()
