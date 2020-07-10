@@ -1,36 +1,71 @@
-li a {
-	color: black;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-nav {
-	display: flex;
-	background-color: #ebd8c7;
-	background-image: linear-gradient(to bottom right, #ebd8c7, #f2bb8a);
-	align-items: center;
-	text-decoration: none;
+html {
+	font-size: 20px;
+	color: #fff;
 	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+li a:link,
+li a:visited {
+	color: #fff
+}
+
+.content {
+	position: absolute;
+	width: 1240px;
+}
+
+.row {
+	padding-bottom: 100px;
 }
 
 .logo {
-	display: flex;
-	text-transform: uppercase;
-	font-size: 25px;
-	letter-spacing: 1px;
-	list-style-type: none;
-}
-
-.logo a{
-	padding-left: 5px;
-	text-decoration: none;
-}
-
-.nav-links li{
+	height: 75px;
+	width: auto;
 	float: left;
-	list-style-type: none;
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
-.nav-links li a{
-	padding: 6px 12px;
-	font-size: 20px;
-	text-decoration: none;
+.main-nav {
+	float: right;
+	list-style: none;
+	font-size: 100%;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin-left: 30px;
+	margin-right: 40px;
+	margin-top: 30px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding-bottom: 3px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
 }
