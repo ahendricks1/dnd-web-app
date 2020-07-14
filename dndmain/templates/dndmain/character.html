@@ -30,4 +30,6 @@
 	Charisma:{{ character.charisma }}
 </p>
 
+<button onclick="location.href='{% url 'dndmain:delete_character' character.id %}'">Delete Character</button>
+
 {% endblock %}
