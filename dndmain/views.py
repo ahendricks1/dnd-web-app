@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views import generic
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from .models import Party, Character
@@ -45,6 +45,8 @@ def edit_character(request, character_id):
 		args = {'form': form}
 
 		return render(request, 'dndmain/edit_character.html', args)
+
+@login_required
 def delete_character(request, character_id):
 	character = get_object_or_404(Character, pk = character_id)
 	if request.method == 'POST':
