@@ -19,7 +19,7 @@
       <div class="row">
         <img src="{% static 'dndmain/images/dnd.png' %}" class="logo">
         <ul class="main-nav">
-          <li><a href="{% url 'dndmain:home' %}">Nat1</a></li>
+          <li><a href="{% url 'dndmain:home' %}" class="home-btn">Nat1</a></li>
           <li><a href="{% url 'dndmain:campaign' %}">Campaign</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'dndmain:profile' user.pk %}">Profile</a></li>
