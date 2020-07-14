@@ -64,7 +64,7 @@ def create(request, user_id):
 			curr_user = get_object_or_404(User, pk = user_id)
 			form.user = curr_user
 			form.save()
-			return render(request, 'dndmain/home.html')
+			return render(request, 'dndmain/profile.html')
 		context = {
 			'form': form
 		}

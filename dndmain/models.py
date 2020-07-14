@@ -21,7 +21,7 @@ class Character(models.Model):
 	armor_class = models.IntegerField(default = 0)
 	speed = models.IntegerField(default = 0)
 	init = models.IntegerField(default = 0)
-	strength = models.IntegerField(default = 10)
+	strength = models.IntegerField(default = 0)
 	dex = models.IntegerField(default = 0)
 	constitution = models.IntegerField(default = 0)
 	intelligence = models.IntegerField(default = 0)
